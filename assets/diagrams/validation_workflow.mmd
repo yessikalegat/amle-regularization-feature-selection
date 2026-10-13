@@ -1,0 +1,11 @@
+flowchart TD
+    A["All data"] --> B["Test set<br>(20%, set aside)"]
+    A --> C["Training + validation data"]
+    C --> D["Training set"]
+    C --> E["Validation set"]
+    D --> F["Fit the scaler<br>and one model per alpha"]
+    F --> G["Compare the models<br>on the validation set"]
+    E --> G
+    G --> H["Retrain the best model<br>on training + validation data"]
+    H --> I["Score it once<br>on the test set"]
+    B --> I

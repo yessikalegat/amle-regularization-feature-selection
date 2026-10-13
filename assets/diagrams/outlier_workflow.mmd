@@ -1,0 +1,11 @@
+flowchart TD
+    A["Split into training and test set"] --> B["Plot the training features<br>histograms, box plots, scatter plots"]
+    B --> C{"Skewed<br>feature?"}
+    C -- "yes" --> D["Log-transform it"]
+    C -- "no" --> E["Calculate the z-scores"]
+    D --> E
+    E --> F["Count the rows<br>beyond a z-score of 3"]
+    F --> G{"Too many<br>rows lost?"}
+    G -- "yes" --> H["Reconsider the approach"]
+    G -- "no" --> I["Remove them from<br>the training set only"]
+    I --> J["Compare both models<br>on the same test set"]

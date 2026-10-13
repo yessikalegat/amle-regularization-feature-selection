@@ -1,0 +1,8 @@
+flowchart TD
+    A["Feature selection method"] --> B["Uses the target<br>(supervised)"]
+    A --> C["Ignores the target<br>(unsupervised)"]
+    B --> D["Filter<br>correlation, mutual information"]
+    B --> E["Between filter and embedded<br>p-values"]
+    B --> F["Wrapper<br>RFE"]
+    B --> G["Embedded<br>Lasso"]
+    C --> H["Filter<br>VIF, variance threshold"]

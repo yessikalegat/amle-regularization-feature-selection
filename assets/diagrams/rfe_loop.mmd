@@ -1,0 +1,6 @@
+flowchart TD
+    A["Fit the model<br>on the remaining features"] --> B["Rank the features<br>by coefficient size"]
+    B --> C["Drop the weakest feature"]
+    C --> D{"Only n features<br>left?"}
+    D -- "no" --> A
+    D -- "yes" --> E["Stop:<br>keep these n features"]
